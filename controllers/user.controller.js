@@ -20,12 +20,12 @@ export const getUser = (req, res) => {
   });
 };
 
-export const deleteUser=(req, res) => {
+export const deleteUser = (req, res) => {
   User.findByIdAndRemove(req.params.id, (err) => {
     if (err) return res.status(500).json(err);
     return res.status(200).json("user deleted");
   });
-}
+};
 
 export const updateUser = (req, res) => {
   const { username, name } = req.body;
@@ -43,4 +43,3 @@ export const updateUser = (req, res) => {
     return res.status(500).json(error.message);
   }
 };
-
